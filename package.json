@@ -1,0 +1,12 @@
+{
+  "name": "ecommerce-product-page",
+  "private": true,
+  "scripts": {
+    "sass:watch": "sass --watch --no-source-map scss:css"
+  },
+  "author": "arpicode",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "latest"
+  }
+}
