@@ -1,0 +1,83 @@
+body {
+    position: relative;
+    font-family: $font-family-body;
+    font-size: $font-size-body;
+    line-height: $line-height;
+    background: $color-white;
+
+    &.has-overlay {
+        overflow-y: hidden;
+    }
+}
+
+main {
+    @media screen and (min-width: $screen-medium) {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        max-width: rem(1015);
+        margin: 0 auto;
+        margin-top: rem(90);
+
+        & > * {
+            flex-basis: rem(445);
+        }
+    }
+}
+/* ----- Containers ----- */
+
+.container {
+    position: relative;
+    min-width: $screen-small;
+    max-width: $screen-large;
+    width: 100%;
+    margin: 0 auto;
+
+    &--navbar {
+        display: flex;
+        height: 100%;
+        border-bottom: em(1) solid $navbar-border-color;
+        justify-content: space-between;
+    }
+
+    @media screen and (min-width: $screen-medium) {
+        width: 92%;
+
+        &--navbar {
+            justify-content: initial;
+            gap: rem(51);
+        }
+    }
+}
+
+.overlay {
+    z-index: $z-overlay;
+    position: fixed;
+    width: 100%;
+    background-color: $color-overlay-start;
+    visibility: hidden;
+    transition: background-color $navbar-base-speed ease-in-out $navbar-base-speed,
+        visibility $navbar-base-speed $navbar-base-speed * 2;
+
+    &--show {
+        background-color: $color-overlay-end;
+        visibility: visible;
+        transition: background-color $navbar-base-speed ease-in-out;
+    }
+
+    &--lightbox {
+        padding-inline: 10%;
+        display: none;
+        top: 0;
+        bottom: 0;
+        overflow-y: auto;
+
+        @media screen and (min-width: $screen-medium) {
+            padding-top: rem(132);
+
+            &.overlay--show {
+                display: block;
+            }
+        }
+    }
+}

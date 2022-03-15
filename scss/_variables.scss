@@ -1,0 +1,59 @@
+/* ----- breakpoints ----- */
+
+$screen-small: 375px;
+$screen-medium: rem(800);
+$screen-large: 1110px;
+
+/* ----- z-indexes ----- */
+
+$z-nav-side-panel: 100;
+$z-overlay: 90;
+$z-cart: 80;
+
+/* ----- colors ----- */
+
+$color-primary-500: hsl(26, 100%, 55%);
+$color-primary-300: hsl(27, 100%, 71%);
+$color-primary-100: hsl(25, 100%, 94%);
+
+$color-grayish-blue-900: hsl(220, 13%, 13%);
+$color-grayish-blue-500: hsl(219, 9%, 45%);
+$color-grayish-blue-300: hsl(220, 14%, 75%);
+$color-grayish-blue-100: hsl(223, 64%, 98%);
+
+$color-gray-100: hsl(252, 12%, 92%);
+
+$color-black: black;
+$color-overlay-start: rgba(0, 0, 0, 0);
+$color-overlay-end: rgba(0, 0, 0, 0.75);
+$color-white: white;
+
+/* ----- typography ----- */
+
+$font-family-body: 'Kumbh Sans', sans-serif;
+$font-size-body: 1rem;
+$line-height: 1.5;
+
+/* ----- navigation ----- */
+
+$navbar-sm-height: rem(68);
+$navbar-lg-height: rem(112 +1);
+$navbar-bg-color: $color-white;
+$navbar-border-color: $color-gray-100;
+
+$hamburger-line-height: rem(3);
+$hamburger-line-color: $color-grayish-blue-500;
+
+$link-underline-height: rem(4);
+$user-avatar-sm-size: rem(24);
+$user-avatar-lg-size: rem(50);
+
+$side-panel-width: rem(250);
+$side-panel-bg-color: $color-white;
+$side-panel-padding: rem(16);
+
+$navbar-base-speed: 250ms;
+
+:root {
+    --nav-base-speed: #{$navbar-base-speed};
+}

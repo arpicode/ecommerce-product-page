@@ -1,0 +1,59 @@
+%button {
+    cursor: pointer;
+    border: none;
+    display: grid;
+    place-items: center;
+    border-radius: rem(10);
+}
+
+.button {
+    @extend %button;
+    width: 100%;
+
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: rem(14);
+        height: 100%;
+        margin-left: rem(-4);
+    }
+
+    &__icon {
+        transform: scale(0.8);
+        path {
+            fill: $color-white;
+        }
+    }
+
+    &__text {
+        letter-spacing: rem(0.5);
+    }
+
+    &--primary {
+        height: rem(56);
+        background-color: $color-primary-500;
+        font-size: rem(15);
+        color: $color-white;
+        font-weight: 700;
+        transition: background-color 150ms ease-in-out;
+
+        &:hover,
+        &:focus {
+            background-color: $color-primary-300;
+            transition: background-color 150ms ease-in-out;
+        }
+
+        &:focus {
+            outline: rem(2) solid $color-primary-500;
+        }
+    }
+
+    &--shadow {
+        box-shadow: 0 25px 30px -20px hsl(26, 100%, 55%, 0.6);
+    }
+
+    &--hide {
+        visibility: hidden;
+        user-select: none;
+    }
+}
