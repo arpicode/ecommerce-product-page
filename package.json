@@ -2,7 +2,8 @@
   "name": "ecommerce-product-page",
   "private": true,
   "scripts": {
-    "sass:watch": "sass --watch --no-source-map scss:css"
+    "sass:watch": "sass --watch --no-source-map scss:css",
+    "build": "sass --style=compressed scss:css"
   },
   "author": "arpicode",
   "license": "MIT",
