@@ -1,0 +1,212 @@
+.lightbox {
+    --lb-width: #{rem(550)};
+    --arrow-btn-size: #{rem(55)};
+    --thumbnail-size: #{rem(88)};
+
+    position: relative;
+    max-width: var(--lb-width);
+    margin: 0 auto;
+
+    &__image-container {
+        border-radius: rem(14);
+        background-color: $color-white;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        max-height: var(--max-height);
+        aspect-ratio: 5/4;
+        object-fit: cover;
+
+        @media screen and (min-width: $screen-medium) {
+            cursor: pointer;
+            position: unset;
+            border-radius: rem(14);
+            max-height: unset;
+            aspect-ratio: unset;
+            margin-bottom: 7.2%;
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        width: 100%;
+        padding-inline: 1rem;
+        top: calc(50% - var(--arrow-btn-size) / 2 - 1px);
+
+        @media screen and (min-width: $screen-medium) {
+            position: unset;
+            padding-inline: unset;
+        }
+    }
+
+    &__arrows-nav {
+        display: flex;
+        justify-content: space-between;
+        @media screen and (min-width: $screen-medium) {
+            display: none;
+        }
+    }
+
+    &__thumbnails-nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__thumbnail-btn {
+        cursor: pointer;
+        display: none;
+        width: var(--thumbnail-size);
+        height: var(--thumbnail-size);
+        border: none;
+        padding: 0;
+        border-radius: rem(10);
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            transition: opacity 200ms ease-in-out;
+        }
+
+        &:hover,
+        &--active {
+            img {
+                opacity: 0.25;
+                transition: opacity 200ms ease-in-out;
+            }
+        }
+
+        &:focus,
+        &--active {
+            outline: 2px solid $color-primary-500;
+            outline-offset: rem(-1);
+        }
+
+        @media screen and (min-width: $screen-medium) {
+            display: block;
+            transition: transform 250ms ease;
+        }
+
+        @media screen and (max-width: ($screen-medium + rem(60))) {
+            width: calc(var(--thumbnail-size) * 0.9);
+            height: calc(var(--thumbnail-size) * 0.9);
+            transition: width 250ms ease, height 250ms ease;
+        }
+    }
+
+    @media screen and (min-width: $screen-medium) {
+        &__image {
+            cursor: unset;
+        }
+
+        &__arrows-nav {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            top: calc(var(--lb-width) / 2 - var(--arrow-btn-size) / 2);
+        }
+
+        &__thumbnails-nav {
+            padding-inline: rem(52);
+        }
+
+        &__arrow-btn {
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            padding: 0;
+            border: none;
+            background: $color-white;
+            width: var(--arrow-btn-size);
+            height: var(--arrow-btn-size);
+            margin-inline: rem(-25);
+
+            &:hover,
+            &:focus {
+                path {
+                    stroke: $color-primary-500;
+                }
+            }
+
+            &:focus {
+                outline: rem(1) solid $color-primary-500;
+                outline-offset: rem(-3);
+            }
+
+            svg {
+                transform: scale(0.75);
+                path {
+                    stroke-width: 4;
+                }
+            }
+
+            &--previous {
+                svg {
+                    margin-right: rem(4);
+                }
+            }
+            &--next {
+                svg {
+                    margin-left: rem(4);
+                }
+            }
+        }
+
+        svg {
+            transform: scale(1);
+            path {
+                stroke-width: 3;
+            }
+        }
+    }
+
+    &__thumbnail-btn {
+        @media screen and (max-width: ($screen-medium + rem(60))) {
+            width: var(--thumbnail-size);
+            height: var(--thumbnail-size);
+        }
+    }
+
+    &__close-btn {
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        right: rem(-2);
+        top: rem(-44);
+        border: none;
+        background: transparent;
+        padding: rem(2) 0 0;
+        border-radius: rem(3);
+        width: rem(24);
+        height: rem(24);
+
+        svg {
+            transform: scale(1.4);
+
+            path {
+                fill: $color-grayish-blue-100;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            svg {
+                path {
+                    fill: $color-primary-500;
+                }
+            }
+        }
+
+        &:focus {
+            outline: 2px solid $color-primary-500;
+            outline-offset: 3px;
+        }
+
+        @media screen and (min-width: $screen-medium) {
+            display: unset;
+        }
+    }
+}
