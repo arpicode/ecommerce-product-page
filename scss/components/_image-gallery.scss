@@ -1,0 +1,128 @@
+.image-gallery {
+    --max-height: #{rem(450)};
+    --thumbnail-size: #{rem(88)};
+    --arrow-btn-size: #{rem(40)};
+
+    position: relative;
+
+    &__image-container {
+        border-radius: rem(14);
+        background-color: $color-white;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        max-height: var(--max-height);
+        aspect-ratio: 5/4;
+        object-fit: cover;
+
+        @media screen and (min-width: $screen-medium) {
+            cursor: pointer;
+            position: unset;
+            border-radius: rem(14);
+            max-height: unset;
+            aspect-ratio: unset;
+            margin-bottom: 7.2%;
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        width: 100%;
+        padding-inline: 1rem;
+        top: calc(50% - var(--arrow-btn-size) / 2 - 1px);
+
+        @media screen and (min-width: $screen-medium) {
+            position: unset;
+            padding-inline: unset;
+        }
+    }
+
+    &__arrows-nav {
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (min-width: $screen-medium) {
+            display: none;
+        }
+    }
+
+    &__thumbnails-nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__thumbnail-btn {
+        cursor: pointer;
+        display: none;
+        width: var(--thumbnail-size);
+        height: var(--thumbnail-size);
+        border: none;
+        padding: 0;
+        border-radius: rem(10);
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            transition: opacity 200ms ease-in-out;
+        }
+
+        &:hover,
+        &--active {
+            img {
+                opacity: 0.25;
+                transition: opacity 200ms ease-in-out;
+            }
+        }
+
+        &:focus,
+        &--active {
+            outline: 2px solid $color-primary-500;
+            outline-offset: rem(-1);
+        }
+
+        @media screen and (min-width: $screen-medium) {
+            display: block;
+            transition: transform 250ms ease;
+        }
+
+        @media screen and (max-width: ($screen-medium + rem(60))) {
+            width: calc(var(--thumbnail-size) * 0.9);
+            height: calc(var(--thumbnail-size) * 0.9);
+            transition: width 250ms ease, height 250ms ease;
+        }
+    }
+
+    &__arrow-btn {
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        width: var(--arrow-btn-size);
+        height: var(--arrow-btn-size);
+        border-radius: 50%;
+        padding: 0;
+        border: none;
+        background: $color-white;
+
+        &:hover,
+        &:focus {
+            path {
+                stroke: $color-primary-500;
+            }
+        }
+
+        &:focus {
+            outline: rem(1) solid $color-primary-500;
+            outline-offset: rem(-3);
+        }
+
+        svg {
+            transform: scale(0.75);
+            path {
+                stroke-width: 4;
+            }
+        }
+    }
+}
