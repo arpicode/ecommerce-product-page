@@ -1,0 +1,111 @@
+.product {
+    padding: rem(22) rem(24) 0;
+
+    @media screen and (min-width: $screen-medium) {
+        padding: rem(60) 0 0;
+    }
+
+    &__brand {
+        color: $color-primary-500;
+        text-transform: uppercase;
+        font-size: rem(12);
+        letter-spacing: rem(1.65);
+        margin-bottom: rem(16);
+
+        @media screen and (min-width: $screen-medium) {
+            font-size: rem(14);
+            letter-spacing: rem(1.1);
+        }
+    }
+
+    &__heading {
+        text-transform: capitalize;
+        font-size: rem(28);
+        line-height: 1.15;
+        margin-bottom: rem(15.3);
+
+        @media screen and (min-width: $screen-medium) {
+            line-height: 1.1;
+            font-size: rem(44);
+            margin-bottom: rem(35);
+        }
+    }
+
+    &__description {
+        color: $color-grayish-blue-500;
+        font-size: rem(15);
+        line-height: 1.68;
+        margin-bottom: rem(22);
+
+        @media screen and (min-width: $screen-medium) {
+            line-height: 1.6;
+            font-size: rem(16);
+            margin-bottom: rem(22);
+        }
+    }
+
+    &__pricing {
+        display: flex;
+        align-items: center;
+        gap: rem(18);
+        margin-bottom: rem(20);
+
+        @media screen and (min-width: $screen-medium) {
+            display: grid;
+            grid-template-columns: min-content 1fr;
+            gap: 0;
+        }
+    }
+
+    &__final-price {
+        font-size: rem(28);
+        letter-spacing: rem(0.5);
+    }
+
+    &__discount-rate {
+        color: $color-primary-500;
+        font-size: rem(17);
+        font-weight: 700;
+        border-radius: rem(5);
+        padding: 0 rem(8) rem(0.5);
+        background: $color-primary-100;
+
+        @media screen and (min-width: $screen-medium) {
+            margin-left: 1rem;
+            width: fit-content;
+        }
+    }
+
+    &__original-price {
+        --color: #{$color-grayish-blue-300};
+
+        color: var(--color);
+        margin-left: auto;
+        font-weight: 700;
+        letter-spacing: rem(0.5);
+        margin-bottom: rem(3);
+
+        @media screen and (min-width: $screen-medium) {
+            margin-right: 100%;
+            margin-bottom: 0;
+            margin-top: rem(3);
+        }
+
+        &::after {
+            content: '';
+            position: relative;
+            bottom: rem(10.5);
+            display: block;
+            background-color: var(--color);
+            height: rem(1);
+        }
+    }
+
+    &__footer {
+        @media screen and (min-width: $screen-medium) {
+            display: flex;
+            gap: rem(18);
+            margin-top: rem(34);
+        }
+    }
+}

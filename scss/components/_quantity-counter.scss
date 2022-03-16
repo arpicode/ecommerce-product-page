@@ -1,0 +1,71 @@
+%btn-outlines {
+    outline: rem(2) solid $color-primary-500;
+    outline-offset: rem(-2);
+}
+
+.quantity-counter {
+    --radius-size: #{rem(10)};
+    --bg-color: #{$color-grayish-blue-100};
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-color);
+    height: rem(56);
+    border-radius: var(--radius-size);
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: $screen-medium) {
+        width: rem(258);
+    }
+
+    &__btn {
+        cursor: pointer;
+        padding-inline: rem(22);
+        background: var(--bg-color);
+        border: none;
+        padding: rem(15) rem(24);
+        height: 100%;
+
+        @media screen and (min-width: $screen-medium) {
+            padding: rem(15) rem(15);
+        }
+
+        &:focus {
+            @extend %btn-outlines;
+        }
+
+        &--minus {
+            border-radius: var(--radius-size) 0 0 var(--radius-size);
+
+            &:hover,
+            &:focus {
+                svg {
+                    path {
+                        fill: $color-primary-300;
+                    }
+                }
+            }
+        }
+
+        &--plus {
+            border-radius: 0 var(--radius-size) var(--radius-size) 0;
+            svg {
+                margin-top: rem(2);
+            }
+
+            &:hover,
+            &:focus {
+                svg {
+                    use {
+                        fill: $color-primary-300;
+                    }
+                }
+            }
+        }
+    }
+
+    &__value {
+        font-weight: 700;
+    }
+}
