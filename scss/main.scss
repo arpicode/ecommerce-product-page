@@ -11,3 +11,18 @@
 @import './components/quantity-counter';
 @import './components/cart';
 @import './components/lightbox';
+
+footer {
+    font-size: 0.8rem;
+    text-align: center;
+    color: $color-grayish-blue-500;
+    padding-top: rem(40);
+
+    a {
+        color: #b34d00;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
