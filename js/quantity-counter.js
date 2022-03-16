@@ -24,7 +24,3 @@ export class QuantityCounter {
         if (value >= 0) this.dom.quantityValue.textContent = value
     }
 }
-
-// ;(() => {
-//     new QuantityCounter()
-// })()
